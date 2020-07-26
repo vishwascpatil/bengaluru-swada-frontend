@@ -1,6 +1,6 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import {} from '@angular/compiler';
+import { LiteralExpr } from '@angular/compiler';
 
 @Component({
   selector: 'signin-signup',
@@ -10,7 +10,8 @@ import {} from '@angular/compiler';
 export class SigninSignupComponent implements OnInit {
   constructor(
     // private signinSignupService: SigninSignupService,
-    private router: Router
+    private router: Router,
+    private el: ElementRef
   ) {}
   // errorMessage: string;
   // bindingworks: any;
@@ -21,10 +22,19 @@ export class SigninSignupComponent implements OnInit {
   //   error: (err) => (this.errorMessage = err),
   // });
   // displaylogin: Boolean = true;
-  // navigate(): void {
-  //   this.displaylogin = false;
-  //   this.router.navigate(
-  // }
+  navigate(): void {
+    this.router.navigate(['search-location']);
+  }
+  navigatesignin(): void {
+    let signincontainer = this.el.nativeElement.querySelector('.container');
+
+    signincontainer.classList.remove('sign-up-mode');
+  }
+
+  navigatesignup(): void {
+    let signupcontainer = this.el.nativeElement.querySelector('.container');
+    signupcontainer.classList.add('sign-up-mode');
+  }
 
   ngOnInit(): void {}
 }
