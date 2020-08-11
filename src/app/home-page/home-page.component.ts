@@ -15,15 +15,23 @@ export class HomePageComponent implements OnInit {
     private homepageService: HomePageService
   ) {}
 
-  areaDetails: any = null;
+  allshops: any = [];
   ngOnInit(): void {
     if (this.searchLocation.locationname.length > 0) {
       this.homepageService
         .GetLocationDetails(this.searchLocation.locationname)
         .subscribe((areaDetails) => {
-          this.areaDetails = areaDetails;
+          this.getallshopdetails(areaDetails);
         });
     }
+  }
+
+  getallshopdetails(areaDetails: any): any {
+    areaDetails.areas[0].categoryList.forEach((categoryist) => {
+      categoryist.shop.forEach((shops) => {
+        this.allshops.push(shops.shopDetails);
+      });
+    });
   }
 
   navigate(): void {
