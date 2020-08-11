@@ -11,7 +11,7 @@ import { HomePageService } from './home-page.service';
 export class HomePageComponent implements OnInit {
   constructor(
     private router: Router,
-    private searchLocation: SearchLocationService,
+    public searchLocation: SearchLocationService,
     private homepageService: HomePageService
   ) {}
 
