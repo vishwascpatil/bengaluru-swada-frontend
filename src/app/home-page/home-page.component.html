@@ -1,45 +1,55 @@
-﻿<!-- 
-    <link
-      href="https://fonts.googleapis.com/css?family=Ubuntu"
-      rel="stylesheet"
-    /> -->
-<div class="container" id="deviceready">
-  <!-- <img src="https://picsum.photos/375/787" alt="" class="image" />
-  <button class="icon -back">
-    <i class="fas fa-chevron-left"></i>
-  </button> -->
-  <!-- Header -->
-  <div class="header">
-    <h1 class="title">Discover</h1>
-    <button class="icon -plus"></button>
-    <button class="icon -grid">
-      <i class="large material-icons adjusthomelogo"> person</i>
-    </button>
-    <!--     Search -->
-    <label for="" class="search">
-      <i class="large material-icons adjusthomelogo"> search</i>
-
-      <input
-        type="text"
-        value=""
-        placeholder="{{ searchLocation.locationname }}"
-        class="input"
-      />
-    </label>
-  </div>
-
-  <!-- Grid -->
-
-  <div *ngFor="let shopdetails of allshops">
-    <div class="grid-card" (click)="navigate()">
-      <figure class="grid">
-        <img src="https://picsum.photos/400/207" alt="" class="image" />
-        <figcaption class="caption">
-          <h3 class="title">{{ shopdetails.shopName }}</h3>
-        </figcaption>
-      </figure>
+﻿<div id="root">
+  <div class="container_c10n0zc9">
+    <div class="content_c1f5g3xo">
+      <div class="wrapper_w73qwpb">
+        <div class="contentInner_czc1r2f">
+          <div class="examples_e1ame48d">
+            <div class="header_h10748mp">
+              <h1 class="title_tux72uk">
+                Explore
+              </h1>
+              <div class="descriptionAndSearch_d111ftta">
+                <input class="search_s1kctt7n" placeholder="Search" />
+              </div>
+            </div>
+            <div *ngFor="let shopdetails of allshops">
+              <div class="categories_c3ricqe">
+                <div class="fullRow_f10r15cc">
+                  <a class="featuredCard_fpot1f9" href=""
+                    ><div
+                      class="featuredImage_fd8tp8u"
+                      style="background: rgb(14, 152, 255);"
+                    >
+                      <video
+                        class="hero_htjai9s"
+                        poster="https://static.framer.com/onboarding/me1.jpg"
+                        autoplay=""
+                        loop=""
+                        style="top: 10px;"
+                      >
+                        <source
+                          src="https://static.framer.com/onboarding/me1.mp4"
+                          type="video/mp4"
+                        />
+                        Your browser does not support HTML video.
+                      </video>
+                    </div>
+                    <div class="featuredStrings_fuyir49">
+                      <!-- <div class="featuredSubtitle_f1f83cap">
+                        Magic Motion
+                      </div> -->
+                      <div class="featuredTitle_f1n7hmrn">
+                        <h3 class="title">{{ shopdetails.shopName }}</h3>
+                      </div>
+                    </div></a
+                  >
+                </div>
+              </div>
+            </div>
+            <h5 class="heading">upto date</h5>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <h5 class="heading">upto date</h5>
 </div>

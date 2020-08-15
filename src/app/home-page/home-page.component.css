@@ -1,335 +1,1481 @@
-﻿﻿* {
-  font-family: "Montserrat", sans-serif;
+﻿﻿/*! CSS Used from: https://framer.com/s/web.css?20200410 */
+html {
+  box-sizing: border-box;
 }
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 0px;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
-
 a {
+  color: var(--text-link);
   text-decoration: none;
-  color: inherit;
 }
-
-ul {
-  list-style: none;
-}
-
-h1 {
+body {
+  --primary: #09f;
+  --background: #fff;
+  --bar-background: #fff;
+  --button-border: rgba(0, 0, 0, 0.1);
+  --button: transparent;
+  --button-cta: var(--primary);
+  --button-cta-text: #fff;
+  --button-icon-size: 30px;
+  --button-on-background: #000;
+  --button-text: #333;
+  --corner-radius: 5px;
+  --circle-border: #eee;
+  --hover-background: #f5f5f5;
+  --list-border: #eee;
+  --menu-active: var(--primary);
+  --menu-active-text: #fff;
+  --menu-background: rgba(255, 255, 255, 0.97);
+  --menu-border: rgba(0, 0, 0, 0.1);
+  --menu-border-width: 0.5px;
+  --menu-highlight: rgba(255, 255, 255, 0.5);
+  --menu-separator: rgba(0, 0, 0, 0.1);
+  --menu-shadow: rgba(0, 0, 0, 0.1);
+  --panel-background: #fbfbfb;
+  --panel-background-secondary: #fdfdfd;
+  --panel-border: #ddd;
+  --panel-border-secondary: #eee;
+  --separator-line: #eee;
+  --text: #333;
+  --text-header: #000;
+  --text-input: #777;
+  --text-link: #181818;
+  --text-menu: var(--text);
+  --text-subtle: rgba(0, 0, 0, 0.4);
+  --text-title: #000;
+  --text-subtitle: #999;
+  --input-background: #fff;
+  --input-border-color: #eee;
+  --input-text-color: #000;
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 13px;
   margin: 0;
-}
-
-button {
-  /*cursor: pointer;*/
-}
-
-.container {
-  width: 375px;
-  height: max-content;
-  padding: 25px;
-  box-shadow: 0 40px 20px -30px rgba(0, 0, 0, 0);
-  position: relative;
+  overscroll-behavior: none;
   overflow: hidden;
-  background-color: white;
-  margin-left: auto;
-  margin-right: auto;
 }
-
-.container > .image {
-  filter: blur(2px);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+body,
+input,
+button {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 }
-
-.container .container-description *:not(.image) {
-  z-index: 1;
-  position: relative;
+body,
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
-
-.container > .container-description {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  border-radius: 20px;
-  bottom: 0;
-  padding: 20px;
-  padding-top: 40px;
-}
-
-.container > .container-description > .mark {
-  position: absolute;
-  top: -18px;
-  padding: 10px;
-  background-color: #e8e8e8;
-  width: 37px;
-  height: 37px;
-  border-radius: 50%;
-  right: 20px;
+button {
+  background: var(--button);
+  border: var(--button-border) solid 1px;
+  border-radius: var(--corner-radius);
+  box-sizing: border-box;
+  color: var(--button-text);
+  cursor: pointer;
+  font-size: inherit;
+  height: var(--button-height);
+  line-height: calc(var(--button-height) - 2px);
+  min-width: 60px;
+  outline: 0;
+  padding: 0 12px;
   text-align: center;
 }
-
-.container > .image {
-  filter: blur(2px);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+h1 {
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  font-weight: 700;
+  color: var(--text-title);
 }
-
-.header {
-  display: flex;
-  flex-flow: row wrap;
+h2 {
+  margin-top: 2em;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+}
+input {
+  outline: none;
+}
+/*! CSS Used from: https://framer.com/s/web.60c77ea/commons~project~projects~share.68de8b503a1364d52715.css */
+.button_b1qx951a {
+  -webkit-appearance: none;
+  background-color: var(--framer-fresco-buttonBackground-color, #f3f3f3);
+  border: none;
+  border-radius: 5px;
+  color: var(--framer-fresco-buttonText-color, #333333);
+  cursor: default;
+  font-size: 12px;
+  font-weight: 400;
+  height: 26px;
+  margin: 0;
+  outline: none;
+  padding: 0 8px 1px;
   position: relative;
-  overflow: hidden;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  -webkit-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-
-.header > .title {
-  margin-right: auto;
-  font-size: 27px;
+.button_b1qx951a:disabled {
+  opacity: 0.5;
 }
-
-.-withsub {
+.text_tar4hv2::before {
+  content: "";
+  display: block;
+  margin-top: var(--margin-top);
+}
+.text_tar4hv2::after {
+  content: "";
+  display: block;
+  margin-bottom: var(--margin-bottom);
+}
+.floatingActionButton_f169aykk {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: var(
+    --framer-fresco-floatingActionButtonBackground-color,
+    #ffffff
+  );
+  border-radius: 50%;
+  box-shadow: var(
+    --framer-fresco-floatingActionButton-shadow,
+    0px 4px 8px 0px rgba(0, 0, 0, 0.09)
+  );
+  color: var(--framer-fresco-floatingActionButtonIcon-color, #444444);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  height: 30px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-width: 30px;
+  padding: 0;
+}
+body {
+  --framer-fresco-tint-color: #0099ff;
+  --framer-fresco-tintDark-color: #0088ff;
+  --framer-fresco-tintDimmed-color: rgba(0, 153, 255, 0.1);
+  --framer-fresco-componentTint-color: #8855ff;
+  --framer-fresco-componentTintDimmed-color: rgba(136, 85, 255, 0.1);
+  --framer-fresco-errorTint-color: #ff3366;
+  --framer-fresco-errorTintDimmed-color: rgba(255, 51, 102, 0.1);
+  --framer-fresco-warningTint-color: #ffbb00;
+  --framer-fresco-warningTintDimmed-color: rgba(255, 187, 0, 0.2);
+  --framer-fresco-graphicTint-color: #22cc88;
+  --framer-fresco-graphicTintDimmed-color: rgba(0, 204, 136, 0.15);
+  --framer-fresco-panelTitle-color: #333333;
+  --framer-fresco-panelText-color: #666666;
+  --framer-fresco-panelTextSelected-color: #ffffff;
+  --framer-fresco-panelBackground-color: #ffffff;
+  --framer-fresco-panelDivider-color: #eeeeee;
+  --framer-fresco-panelSectionHeaderIcon-color: #444444;
+  --framer-fresco-dropdownText-color: #999999;
+  --framer-fresco-canvasCreatePreviewBorder-color: #0099ff;
+  --framer-fresco-canvasSelectionRectBackground-color: rgba(0, 153, 255, 0.1);
+  --framer-fresco-canvasSelectionRectBorder-color: rgba(0, 153, 255, 0.5);
+  --framer-fresco-canvasTooltipText-color: #ffffff;
+  --framer-fresco-canvasTooltipBackground-color: rgba(17, 17, 17, 0.4);
+  --framer-fresco-floatingWindowToolbarIcon-color: #999999;
+  --framer-fresco-modalBackground-color: #ffffff;
+  --framer-fresco-modalBackgroundTransparent-color: rgba(255, 255, 255, 0);
+  --framer-fresco-modalSecondaryBackground-color: #fafafa;
+  --framer-fresco-modalBackdrop-color: rgba(0, 0, 0, 0.4);
+  --framer-fresco-modalTitle-color: #000000;
+  --framer-fresco-modalDescription-color: #999999;
+  --framer-fresco-buttonBackground-color: #f3f3f3;
+  --framer-fresco-buttonBackgroundHover-color: #eeeeee;
+  --framer-fresco-buttonBackgroundActive-color: #dddddd;
+  --framer-fresco-buttonText-color: #333333;
+  --framer-fresco-buttonBackgroundPrimary-color: #0099ff;
+  --framer-fresco-buttonBackgroundPrimaryHover-color: #0088ff;
+  --framer-fresco-buttonBackgroundPrimaryActive-color: #0077ff;
+  --framer-fresco-buttonTextPrimary-color: #ffffff;
+  --framer-fresco-buttonBackgroundDestructive-color: #ff3366;
+  --framer-fresco-buttonBackgroundDestructiveHover-color: #ee2255;
+  --framer-fresco-buttonBackgroundDestructiveActive-color: #dd1144;
+  --framer-fresco-buttonTextDestructive-color: #ffffff;
+  --framer-fresco-rowOverlayButtonBackground-color: #eeeeee;
+  --framer-fresco-rowOverlayButtonBackgroundHover-color: #e3e3e3;
+  --framer-fresco-rowOverlayButtonBackgroundActive-color: #dddddd;
+  --framer-fresco-tabBarText-color: #888888;
+  --framer-fresco-inputBackground-color: #f3f3f3;
+  --framer-fresco-inputBorder-color: transparent;
+  --framer-fresco-inputBorderError-color: #ff3366;
+  --framer-fresco-inputBorderActive-color: #0099ff;
+  --framer-fresco-inputText-color: #333333;
+  --framer-fresco-inputTextError-color: #ff3366;
+  --framer-fresco-inputTextDisabled-color: #bbbbbb;
+  --framer-fresco-inputPlaceholder-color: #999999;
+  --framer-fresco-inputLabel-color: #999999;
+  --framer-fresco-inputLabelDisabled-color: #dddddd;
+  --framer-fresco-inputIcon-color: #999999;
+  --framer-fresco-inputIconHover-color: #888888;
+  --framer-fresco-inputIconDisabled-color: #bbbbbb;
+  --framer-fresco-iconPadlock-color: #bbbbbb;
+  --framer-fresco-padLockConnector-color: #dddddd;
+  --framer-fresco-popoverBackground-color: #ffffff;
+  --framer-fresco-popoverDivider-color: #eeeeee;
+  --framer-fresco-popupButtonBackground-color: #f3f3f3;
+  --framer-fresco-popupButtonBorder-color: transparent;
+  --framer-fresco-popupButtonText-color: #333333;
+  --framer-fresco-radioButtonBackground-color: #f3f3f3;
+  --framer-fresco-radioButtonBackgroundHover-color: #dddddd;
+  --framer-fresco-radioButtonLabel-color: #333333;
+  --framer-fresco-segmentedControlBackground-color: #f3f3f3;
+  --framer-fresco-segmentedControlBorder-color: transparent;
+  --framer-fresco-segmentedControlItemBackground-color: #f3f3f3;
+  --framer-fresco-segmentedControlItemBackgroundActive-color: #eeeeee;
+  --framer-fresco-segmentedControlItemBackgroundSelected-color: #ffffff;
+  --framer-fresco-segmentedControlItemText-color: #999999;
+  --framer-fresco-segmentedControlItemTextHover-color: #888888;
+  --framer-fresco-segmentedControlItemTextSelected-color: #0099ff;
+  --framer-fresco-segmentedControlItemTextSelectedHover-color: #0088ff;
+  --framer-fresco-segmentedControlDivider-color: #e3e3e3;
+  --framer-fresco-sliderKnob-color: #ffffff;
+  --framer-fresco-sliderTrack-color: #dddddd;
+  --framer-fresco-sliderTrackActive-color: #0099ff;
+  --framer-fresco-sliderTrackDisabled-color: #eeeeee;
+  --framer-fresco-spinnerBackground-color: #000000;
+  --framer-fresco-swatchBorder-color: rgba(0, 0, 0, 0.1);
+  --framer-fresco-checkboxBackground-color: #dddddd;
+  --framer-fresco-checkboxBackgroundActive-color: #cccccc;
+  --framer-fresco-checkboxBackgroundChecked-color: #0099ff;
+  --framer-fresco-checkboxBackgroundCheckedActive-color: #0088ff;
+  --framer-fresco-checkboxBackgroundDisabled-color: #f3f3f3;
+  --framer-fresco-codeEditorBackground-color: #fdfdfd;
+  --framer-fresco-toolbarIcon-color: #888888;
+  --framer-fresco-toolbarIconHover-color: #777777;
+  --framer-fresco-toolbarIconActive-color: #0099ff;
+  --framer-fresco-toolbarIconBadge-color: #ee4444;
+  --framer-fresco-toolbarTitleText-color: #888888;
+  --framer-fresco-toolbarInputText-color: #333333;
+  --framer-fresco-animationForground-color: #ffffff;
+  --framer-fresco-animationForgroundDimmed-color: #4faeff;
+  --framer-fresco-animationForgroundLight-color: #7fc3ff;
+  --framer-fresco-animationBackgroundLight-color: rgba(255, 255, 255, 0.2);
+  --framer-fresco-animationNavigationTargetFrame-color: #ffffff;
+  --framer-fresco-animationNavigationTargetFrameSelected-color: #eaf4ff;
+  --framer-fresco-textAreaScrollbar-color: #cccccc;
+  --framer-fresco-toolbarButtonBackground-color: #f3f3f3;
+  --framer-fresco-toolbarButtonBackgroundActive-color: #333333;
+  --framer-fresco-toolbarButtonBackgroundDisabled-color: #999999;
+  --framer-fresco-toolbarButtonBackgroundWarning-color: rgba(255, 170, 0, 0.2);
+  --framer-fresco-toolbarButtonBackgroundWarningActive-color: rgba(
+    255,
+    170,
+    0,
+    0.3
+  );
+  --framer-fresco-toolbarButtonBackgroundError-color: rgba(255, 0, 85, 0.1);
+  --framer-fresco-toolbarButtonBackgroundErrorActive-color: rgba(
+    255,
+    0,
+    85,
+    0.2
+  );
+  --framer-fresco-toolbarButtonText-color: #666666;
+  --framer-fresco-toolbarButtonTextWarning-color: #ffaa00;
+  --framer-fresco-toolbarButtonTextError-color: #ff0055;
+  --framer-fresco-toolbarButtonTextActive-color: #ffffff;
+  --framer-fresco-layerItemTextDimmed-color: rgba(102, 102, 102, 0.8);
+  --framer-fresco-layerItemTextInactive-color: rgba(0, 0, 0, 0.5);
+  --framer-fresco-layerItemTextInactiveSelected-color: rgba(255, 255, 255, 0.5);
+  --framer-fresco-layerItemIcon-color: #bbbbbb;
+  --framer-fresco-layerItemIconDimmed-color: #9aacc0;
+  --framer-fresco-layerItemIconComponentDimmed-color: #86829a;
+  --framer-fresco-layerItemIconGraphicDimmed-color: #a9beaf;
+  --framer-fresco-layerItemIconInactive-color: rgba(187, 187, 187, 0.5);
+  --framer-fresco-layerItemIconInactiveSelected-color: rgba(187, 187, 187, 0.5);
+  --framer-fresco-layerItemPlaceholderText-color: #999999;
+  --framer-fresco-layerItemComponentLabel-color: #aaaaaa;
+  --framer-fresco-layerItemComponentLabelSelected-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  );
+  --framer-fresco-assetsPanelNoSearchResults-color: #999999;
+  --framer-fresco-assetsPanelPackageIconBackground-color: transparent;
+  --framer-fresco-canvasBackground-color: #eeeeee;
+  --framer-fresco-canvasFrameTitle-color: #bbbbbb;
+  --framer-fresco-canvasFrameOutline-color: #cccccc;
+  --framer-fresco-canvasFramePreview-color: rgba(0, 0, 0, 0.03);
+  --framer-fresco-canvasFramePreviewOutline-color: rgba(0, 0, 0, 0.1);
+  --framer-fresco-canvasFrameOffscreenBackground-color: #dddddd;
+  --framer-fresco-canvasConnectionLine-color: rgba(135, 135, 135, 0.5);
+  --framer-fresco-rulerBackground-color: #fdfdfd;
+  --framer-fresco-rulerBorderColor-color: #dddddd;
+  --framer-fresco-rulerTextColor-color: #bbbbbb;
+  --framer-fresco-guideColor-color: #00e4f5;
+  --framer-fresco-guideHighlightColor-color: #0099ff;
+  --framer-fresco-selectionBox-color: rgba(125, 125, 125, 0.03);
+  --framer-fresco-selectionBoxOutline-color: rgba(125, 125, 125, 0.3);
+  --framer-fresco-selectionBoxBackground-color: rgba(0, 153, 255, 0.2);
+  --framer-fresco-selectionBoxComponentBackground-color: rgba(
+    136,
+    85,
+    255,
+    0.2
+  );
+  --framer-fresco-snapLine-color: #ff5aaa;
+  --framer-fresco-snapConstraint-color: #ffd700;
+  --framer-fresco-textEditorOutline-color: #cccccc;
+  --framer-fresco-error-color: #ee4444;
+  --framer-fresco-errorText-color: #ffffff;
+  --framer-fresco-fatalErrorText-color: #000000;
+  --framer-fresco-codeExportPanelFadeOut-color: rgba(255, 255, 255, 0);
+  --framer-fresco-codeExportPanelSelection-color: rgba(229, 229, 229, 0.99);
+  --framer-fresco-fontFamilyGoogleIcon-color: #dddddd;
+  --framer-fresco-fontFamilyGoogleIconHover-color: #999999;
+  --framer-fresco-packagesCompactCardTextDimmed-color: #aaaaaa;
+  --framer-fresco-packagesPublishedPackageTitle-color: #333333;
+  --framer-fresco-packagesDescriptionBorder-color: #e2e2e2;
+  --framer-fresco-packagesInputPlaceholder-color: #ccc;
+  --framer-fresco-packagesInputPlaceholderFocused-color: #ddd;
+  --framer-fresco-packagesMarkdownCodeBackground-color: #fff;
+  --framer-fresco-packagesMarkdownCodeBlockBackground-color: #fdfdfd;
+  --framer-fresco-packagesMarkdownInnerBorder-color: #eee;
+  --framer-fresco-packagesMarkdownTableRow-color: rgba(0, 0, 0, 0.025);
+  --framer-fresco-packagesShareIcon-color: #999;
+  --framer-fresco-packagesTextColor-color: #111;
+  --framer-fresco-packagesTextColorLight-color: #777;
+  --framer-fresco-packagesTextColorLightest-color: #999;
+  --framer-fresco-previewConsoleBackground-color: #f4f4f4;
+  --framer-fresco-previewConsoleButtonText-color: #999999;
+  --framer-fresco-previewConsoleDivider-color: rgba(221, 221, 221, 0.5);
+  --framer-fresco-previewConsoleCollapseIcon-color: #bbbbbb;
+  --framer-fresco-previewConsoleBadge-color: #bababa;
+  --framer-fresco-previewSpinnerBackground-color: #bbbbbb;
+  --framer-fresco-sharedPreviewStatusHeading-color: #333333;
+  --framer-fresco-sharedPreviewStatusText-color: #999999;
+  --framer-fresco-sharedPreviewStatusIcon-color: #666666;
+  --framer-fresco-sharedPreviewBackground-color: #ffffff;
+  --framer-fresco-sharedPreviewMobileQRBackground-color: #f3f3f3;
+  --framer-fresco-sharedPreviewMobileQR-color: #000000;
+  --framer-fresco-tooltipBackground-color: #999999;
+  --framer-fresco-inactiveAvatarBackground-color: #888888;
+  --framer-fresco-feedbackSidebarBackground-color: #ffffff;
+  --framer-fresco-feedbackPrimaryText-color: #333333;
+  --framer-fresco-feedbackSecondaryText-color: #999999;
+  --framer-fresco-feedbackTertiaryText-color: #666666;
+  --framer-fresco-feedbackFormButtonBackground-color: #f3f3f3;
+  --framer-fresco-feedbackFormButtonFill-color: #888888;
+  --framer-fresco-feedbackFormButtonSubmitFocus-color: #0066ff;
+  --framer-fresco-feedbackFormButtonFocus-color: #eeeeee;
+  --framer-fresco-feedbackFormBackground-color: #ffffff;
+  --framer-fresco-feedbackFormPlaceholder-color: #bbbbbb;
+  --framer-fresco-feedbackDivider-color: #eeeeee;
+  --framer-fresco-feedbackLabelBackground-color: #f5f5f5;
+  --framer-fresco-feedbackHasRepliesBackground-color: rgba(0, 153, 255, 0.1);
+  --framer-fresco-feedbackDisclosureBackground-color: #f5f5f5;
+  --framer-fresco-feedbackDisclosureFill-color: #999999;
+  --framer-fresco-emptyStateIcon-color: #999999;
+  --framer-fresco-emptyStateCardBackground-color: #f5f5f5;
+  --framer-fresco-emptyStateBodyText-color: #999999;
+  --framer-fresco-errorStateIconColor-color: #aaaaaa;
+  --framer-fresco-errorStateCodeText-color: #666666;
+  --framer-fresco-errorStateCodeBackground-color: #f5f5f5;
+  --framer-fresco-errorStateTitleText-color: #333333;
+  --framer-fresco-errorStateDescriptionText-color: #666666;
+  --framer-fresco-dashboardTitleDivision-color: #eeeeee;
+  --framer-fresco-dashboardIconBackground-color: #f5f5f5;
+  --framer-fresco-dashboardItemIcon-color: #333333;
+  --framer-fresco-dashboardModalTitle-color: #333333;
+  --framer-fresco-dashboardModalContent-color: #999999;
+  --framer-fresco-dashboardSearchPlaceholder-color: #999999;
+  --framer-fresco-dashboardMoreButtonIcon-color: #999999;
+  --framer-fresco-dashboardInviteUpsellDescription-color: #888888;
+  --framer-fresco-dashboardEmptyState-color: #fafafa;
+  --framer-fresco-dashboardSidebarBackground-color: #fafafa;
+  --framer-fresco-dashboardSidebarTitle-color: #000000;
+  --framer-fresco-dashboardSidebarText-color: #666666;
+  --framer-fresco-dashboardSidebarTextDimmed-color: #aaaaaa;
+  --framer-fresco-dashboardSidebarTextHover-color: #444444;
+  --framer-fresco-dashboardSidebarDivider-color: #eeeeee;
+  --framer-fresco-dashboardSidebarActions-color: #666666;
+  --framer-fresco-settingsModalBackground-color: #ffffff;
+  --framer-fresco-settingsModalInputDivision-color: #dddddd;
+  --framer-fresco-settingsModalTeamMemberText-color: #333333;
+  --framer-fresco-settingsModalTeamSearchDivider-color: #f3f3f3;
+  --framer-fresco-settingsModalTeamSearchIcon-color: #666666;
+  --framer-fresco-settingsModalCloseIcon-color: #888888;
+  --framer-fresco-settingsModalText-color: #888888;
+  --framer-fresco-settingsModalTextDimmed-color: #aaaaaa;
+  --framer-fresco-settingsModalInvoiceDivider-color: #eeeeee;
+  --framer-fresco-settingsModalUnknownClientIcon-color: #f5f5f5;
+  --framer-fresco-settingsModalInputError-color: #ff3366;
+  --framer-fresco-settingsModalSidebarBackground-color: #fafafa;
+  --framer-fresco-settingsModalNavigationLink-color: #888888;
+  --framer-fresco-settingsModalTitle-color: #000000;
+  --framer-fresco-settingsModalUpgradeButtonColor-color: #ffffff;
+  --framer-fresco-settingsModalPlanEmptyEditorsAvatar-color: #f3f3f3;
+  --framer-fresco-settingsModalPlanEmptyEditorsAvatarText-color: #aaaaaa;
+  --framer-fresco-settingsModalPlanCardPrice-color: #888888;
+  --framer-fresco-settingsModalPlanCardBackground-color: #fafafa;
+  --framer-fresco-settingsModalPlanCardListDivider-color: #eeeeee;
+  --framer-fresco-settingsModalPlanCardMoreButtonBackgroundHover-color: #e3e3e3;
+  --framer-fresco-settingsModalPlanCardMoreButtonBackgroundActive-color: #dddddd;
+  --framer-fresco-insertMenuPrimaryText-color: #333333;
+  --framer-fresco-insertMenuSecondaryText-color: #999999;
+  --framer-fresco-insertMenuFocusedText-color: #ffffff;
+  --framer-fresco-insertMenuDeviceIconBackground-color: #999999;
+  --framer-fresco-insertMenuIconColor-color: #ffffff;
+  --framer-fresco-insertMenuIconBackground-color: rgba(255, 255, 255, 0.3);
+  --framer-fresco-insertMenuPreviewBackground-color: #f3f3f3;
+  --framer-fresco-insertMenuNavText-color: #666666;
+  --framer-fresco-insertMenuNavTextHover-color: #333333;
+  --framer-fresco-insertMenuChevronColor-color: #cccccc;
+  --framer-fresco-insertMenuUnfavorite-color: #dddddd;
+  --framer-fresco-insertMenuFavorite-color: #ffbb00;
+  --framer-fresco-insertMenuInteractionPreviewFrameFill-color: #ffffff;
+  --framer-fresco-insertMenuInteractionPreviewFrameFillDark-color: #dddddd;
+  --framer-fresco-insertMenuInteractionPreviewDashedLine-color: #cccccc;
+  --framer-fresco-insertMenuInteractionPreviewTextLarge-color: #eeeeee;
+  --framer-fresco-insertMenuInteractionPreviewText-color: #bbbbbb;
+  --framer-fresco-dashboardTableHeaderText-color: #999999;
+  --framer-fresco-dashboardTableBodyText-color: #333333;
+  --framer-fresco-dashboardTableBodyTextLight-color: #888888;
+  --framer-fresco-dashboardTableRowHighlight-color: #f5f5f5;
+  --framer-fresco-floatingActionButtonBackground-color: #ffffff;
+  --framer-fresco-floatingActionButtonBackgroundHover-color: #333333;
+  --framer-fresco-floatingActionButtonIcon-color: #444444;
+  --framer-fresco-floatingActionButtonIconHover-color: #ffffff;
+  --framer-fresco-shortcutsModalListTitle-color: #999999;
+  --framer-fresco-shortcutsModalActionButton-color: #888888;
+  --framer-fresco-shortcutsModalDivider-color: #eeeeee;
+  --framer-fresco-shortcutsModalKeyBackground-color: #f3f3f3;
+  --framer-fresco-loaderPrimary-color: #f3f3f3;
+  --framer-fresco-loaderSecondary-color: #f4f4f4;
+  --framer-fresco-upsellCTAText-color: #ffffff;
+  --framer-fresco-upsellCTAButtonBackground-color: #ffffff;
+  --framer-fresco-upsellCTAButtonBackgroundHover-color: #eeeeee;
+  --framer-fresco-upsellModalSubtitle-color: #999999;
+  --framer-fresco-upsellModalTitle-color: #000000;
+  --framer-fresco-betaUserBannerBackground-color: #0099ff;
+  --framer-fresco-betaUserBannerTitle-color: #ffffff;
+  --framer-fresco-betaUserBannerSubtitle-color: rgba(255, 255, 255, 0.7);
+  --framer-fresco-betaUserBannerButtonBackground-color: #ffffff;
+  --framer-fresco-betaUserBannerButtonBackgroundHover-color: #ffffff;
+  --framer-fresco-betaUserBannerButtonBackgroundActive-color: #ffffff;
+  --framer-fresco-betaUserBannerButtonText-color: #0099ff;
+  --framer-fresco-betaUserModalTitle-color: #111111;
+  --framer-fresco-betaUserModalDescription-color: #777777;
+  --framer-fresco-betaUserModalSidebarText-color: #111111;
+  --framer-fresco-betaUserModalSidebarAccent-color: #0099ff;
+  --framer-fresco-betaUserModalSidebarLink-color: #888888;
+  --framer-fresco-modal-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.15);
+  --framer-fresco-popover-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.05),
+    0px 5px 20px 0px rgba(0, 0, 0, 0.08);
+  --framer-fresco-popoverArrowDropShadow-shadow: drop-shadow(
+    0px 10px 10px rgba(0, 0, 0, 0.8)
+  );
+  --framer-fresco-buttonSelected-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.05);
+  --framer-fresco-sliderKnob-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 0.5px 0px 0px rgba(0, 0, 0, 0.1);
+  --framer-fresco-card-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 6px 12px 0px rgba(0, 0, 0, 0.05);
+  --framer-fresco-cardActive-shadow: 0px 1px 3px 0px rgba(0, 153, 255, 0.1),
+    0px 0px 12px 0px rgba(0, 153, 255, 0.2);
+  --framer-fresco-imageBorderOverlay-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  --framer-fresco-floatingActionButton-shadow: 0px 4px 8px 0px
+    rgba(0, 0, 0, 0.09);
+  --framer-fresco-insertMenuArtwork-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.075);
+  --framer-fresco-tintOutline-shadow: 0px 0px 0px 5px rgba(0, 153, 255, 0.1);
+  --framer-fresco-tintOutlineSmall-shadow: 0px 0px 0px 2px
+    rgba(0, 153, 255, 0.1);
+  --framer-fresco-componentOutline-shadow: 0px 0px 0px 5px
+    rgba(136, 85, 255, 0.1);
+  --framer-fresco-componentOutlineSmall-shadow: 0px 0px 0px 5px
+    rgba(136, 85, 255, 0.1);
+}
+/*! CSS Used from: https://framer.com/s/web.60c77ea/projects.68de8b503a1364d52715.css */
+.examples_e1ame48d {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
-
-.search {
+.header_h10748mp {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: var(--background);
+  box-sizing: border-box;
+  margin: 0 -30px;
+  padding: 58px 30px 0 30px;
+  top: 0;
+  z-index: 1;
+}
+.descriptionAndSearch_d111ftta {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 40px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.title_tux72uk {
+  color: var(--text-title);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 20px;
+  margin: 0 0 20px 0;
+  overflow: hidden;
+  padding: 20px 0 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.subtitle_s5yi437 {
+  color: var(--framer-fresco-panelText-color);
+}
+.categorySubtitle_ctxs1kk {
+  color: var(--text-subtitle);
+  margin: 10px 0 40px 0;
+}
+.fullRow_f10r15cc {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 400px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 30px;
   width: 100%;
-  margin-top: 20px;
+}
+.splitRow_swpr0c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  height: 400px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 10px 0 50px 0;
+  width: 100%;
+}
+.search_s1kctt7n {
+  background: var(--framer-fresco-inputBackground-color, #f3f3f3);
+  background-image: url(https://framer.com/s/theme-light/search-icon.svg);
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  border: 1px solid var(--background);
+  border-radius: 15px;
+  box-sizing: border-box;
+  font-size: 13px;
+  height: 100%;
+  padding: 0 15px 0 33px;
+  position: static;
+  width: 100%;
+}
+.search_s1kctt7n:focus {
+  border: 1px solid var(--accent);
+}
+.search_s1kctt7n::-webkit-input-placeholder {
+  color: #bbb;
+}
+.search_s1kctt7n::-moz-placeholder {
+  color: #bbb;
+}
+.search_s1kctt7n:-ms-input-placeholder {
+  color: #bbb;
+}
+.search_s1kctt7n::placeholder {
+  color: #bbb;
+}
+.categories_c3ricqe {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.category_c1lzmia6 {
+  margin-bottom: 35px;
+}
+.categoryHeader_c1j9p6jd {
+  color: #333;
+  font-size: 20px;
+  font-weight: 700;
+  -webkit-letter-spacing: -0.2px;
+  -moz-letter-spacing: -0.2px;
+  -ms-letter-spacing: -0.2px;
+  letter-spacing: -0.2px;
+  margin-bottom: 0;
+  margin-top: 30px;
+}
+.smallCard_sq1f3an {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.08), 0 1px 0 0 rgba(0, 0, 0, 0.05);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.smallCard_sq1f3an:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+.cardIcon_cpzh3p3 {
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
   margin-bottom: 20px;
+  overflow: hidden;
+  width: 50px;
+}
+.cardTitle_cmuuuje {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 13px;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.2;
+}
+.cards_c1g4pzy4 {
+  display: grid;
+  grid-auto-rows: 190px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.hero_htjai9s {
+  height: 100%;
+  position: absolute;
+}
+.featuredCard_fpot1f9 {
+  border-radius: 15px;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.05);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+.featuredCard_fpot1f9:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+.featuredImage_fd8tp8u {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.featuredStrings_fuyir49 {
+  bottom: 0;
+  padding: 30px;
+  position: absolute;
+}
+.featuredTitle_f1n7hmrn {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  -webkit-letter-spacing: -0.2px;
+  -moz-letter-spacing: -0.2px;
+  -ms-letter-spacing: -0.2px;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+  margin-top: 5px;
+  overflow: visible;
+  text-align: left;
+}
+.featuredSubtitle_f1f83cap {
+  color: #fff;
+  line-height: 1.2;
+  opacity: 0.6;
+  overflow: visible;
+}
+.container_c10n0zc9 {
+  display: grid;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  grid-template-areas: "sidebar content";
+  grid-template-columns: 280px 1fr;
+  height: 100%;
+  width: 100%;
+}
+body {
+  --accent: #09f;
+  --accent-hover: #0d88ff;
+  --accent-transparent: rgba(0, 153, 255, 0.5);
+  --background: #fff;
+  --button-sidebar: #f0f0f0;
+  --dashboard-toast-background: #fff;
+  --file-background: #fff;
+  --list-border: #eee;
+  --list-link: #888;
+  --list-link-hover: #666;
+  --list-subtle-link: #aaa;
+  --list-subtle-link-hover: #666;
+  --list-subtle-link-disabled: #ccc;
+  --preview-background: #eaeef0;
+  --text-subtitle: #999;
+  --text-subtle: #999;
+  --text-body: #333;
+  --text-title: #000;
+  --project-hover-background: #fafafa;
+  --search-background: #f5f5f5;
+  --menu-icon-background: #f5f5f5;
+  --upload-gauge: #eee;
+}
+@media screen and (max-width: 1000px) {
+  .container_c10n0zc9 {
+    grid-template-areas: "content content";
+  }
+}
+.content_c1f5g3xo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  grid-area: content;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
   position: relative;
 }
-
-.search > .input {
-  padding: 4px;
-  padding-left: 18px;
-  background-color: #f4f4f4;
-  border: 0;
-  border-radius: 10px;
-  width: 100%;
-  height: 38px;
+.wrapper_w73qwpb {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
-
-.search .fas {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  left: 10px;
-  height: 16px;
-  opacity: 0.3;
-  z-index: 2;
+.contentInner_czc1r2f {
+  margin: 0 20px 80px;
+  max-width: 760px;
+  width: 100%;
+}
+.floatingMenu_fn6y8uv {
+  bottom: 25px;
+  position: fixed;
+  right: 25px;
+}
+/*! CSS Used fontfaces */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0370-03FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0370-03FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0370-03FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0370-03FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0370-03FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0370-03FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0370-03FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0370-03FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0370-03FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2)
+    format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/inter/v1/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 
 .heading {
-  align-items: baseline;
-  margin-bottom: 8px;
   text-align: center;
-}
-
-.heading > .link {
-  margin-left: auto;
-  color: #9e9d9d;
-  font-weight: 400;
-  font-size: 14px;
-  text-transform: capitalize;
-}
-
-.heading > .link:hover {
-  color: #383737;
-}
-
-.grid-card {
-  display: flex;
-  padding: 10px 0;
-}
-
-.grid-card > .grid {
-  flex: 1;
-  position: relative;
-  height: 327px;
-  border-radius: 23px;
-  margin: 0;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  box-shadow: 0 9px 13px -4px rgba(0, 0, 0, 0.38);
-  /*cursor: pointer;*/
-}
-
-.grid-card > .grid + .grid {
-  margin-left: 20px;
-}
-
-.grid-card > .grid:hover > .image {
-  transform: scale(1.1);
-}
-
-.grid-card > .grid > .image {
-  transition: 500ms;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.grid-card .caption {
-  position: relative;
-}
-
-.grid-card .caption > .title {
-  color: white;
-  margin: 20px;
-  text-shadow: 0 4px 1px rgba(0, 0, 0, 0.35), 0 -1px 1px rgba(0, 0, 0, 0.2);
-}
-
-.grid-card.-details {
-  flex-direction: column;
-}
-
-.grid-card.-details .image {
-  position: relative;
-}
-
-.grid-card.-details > .grid:first-child {
-  position: absolute;
-  height: calc(100% - 20px);
-  width: calc(50% - 10px);
-}
-
-.grid-card.-details > .grid + .grid {
-  width: calc(50% - 10px);
-  margin-left: auto;
-  height: 100px;
-}
-
-.grid-card.-details .grid + .grid + .grid {
-  margin-top: 20px;
-}
-
-.container-description {
-  background-color: white;
-  display: none;
-}
-
-.container-description > .description {
-  margin-top: 30px;
-}
-
-.container-description > .description > p {
-  font-size: 14px;
-  line-height: 22px;
-}
-
-button.icon.-back {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.58);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: none;
-}
-
-button.icon.-back:hover {
-  background-color: white;
-}
-
-button.icon {
-  border: 0;
-  background-color: transparent;
-}
-
-.-plus::before {
-  content: "";
-}
-
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: white;
-  color: white;
-  text-align: center;
-  height: 6.2%;
-}
-
-.adjustprofilelogo {
-  border-bottom-width: 0px;
-  border-right-width: 0px;
-  padding-top: 8px;
-  padding-left: 8px;
-  color: black;
-}
-/* fallback */
-@font-face {
-  font-family: "Material Icons";
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/materialicons/v48/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2)
-    format("woff2");
-}
-
-.material-icons {
-  font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 30px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
-}
-
-.homeicon {
-  float: left;
-  width: 20%;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.generalicon {
-  float: left;
-  width: 20%;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.whishlist {
-  float: left;
-  width: 20%;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.kart {
-  float: left;
-  width: 20%;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.profile1 {
-  float: left;
-  width: 20%;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.adjusthomelogo {
-  border-bottom-width: 0px;
-  border-right-width: 0px;
-  padding-top: 8px;
-  padding-left: 8px;
-  color: crimson;
+  font-family: "Poppins", sans-serif;
 }
