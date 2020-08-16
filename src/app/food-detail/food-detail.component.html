@@ -1,1 +1,98 @@
-<p>heyy</p>
+<div id="root">
+  <div class="container_c10n0zc9">
+    <div class="content_c1f5g3xo">
+      <div class="wrapper_w73qwpb">
+        <div class="contentInner_czc1r2f">
+          <div class="examples_e1ame48d">
+            <div class="header_h10748mp">
+              <h1 class="title_tux72uk">
+                {{ shopDetails.shopName }}
+              </h1>
+              <div class="categories_c3ricqe">
+                <div class="fullRow_f10r15cc">
+                  <a class="featuredCard_fpot1f9">
+                    <div
+                      class="featuredImage_fd8tp8u"
+                      style="background: rgb(14, 152, 255);"
+                    >
+                      <img
+                        href="../Images/WhatsApp Image 2020-05-17 at 5.42.54 PM.jpeg"
+                      />
+                    </div>
+                    <div class="featuredStrings_fuyir49">
+                      <!-- <div class="featuredSubtitle_f1f83cap">
+                          Magic Motion
+                        </div> -->
+                      <div class="featuredTitle_f1n7hmrn"></div></div
+                  ></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="column1">
+                  <h1 class="title_tux72uk">{{ shopDetails.famousFood }}</h1>
+                  <div class="rowstars">
+                    <div
+                      class="column3"
+                      ngif="shopDetails !== null && shopDetails.rating"
+                    >
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star"></span>
+                      <h1 class="votesstyle">(23 votes)</h1>
+                    </div>
+                  </div>
+                </div>
+                <div class="column2">
+                  <h1 class="rightalign title_tux72uk">
+                    {{ shopDetails.price }}
+                  </h1>
+                </div>
+              </div>
+              <h1 class="title_tux72uk">
+                Description
+              </h1>
+              <div class="descriptionAndSearch_d111ftta">
+                <textarea
+                  class="search_s1kctt7n"
+                  disabled
+                  [(ngModel)]="shopDetails.speciality"
+                ></textarea>
+              </div>
+              <h1 class="title_tux72uk">
+                Reviews
+              </h1>
+              <div *ngFor="let review of reviews">
+                <div class="row topmargin">
+                  <div class="column5">
+                    profile pic logic comes here
+                  </div>
+                  <div class="column6">
+                    <h1 class="namearrange">{{ review.foodBloggerName }}</h1>
+                    <div class="rowstars">
+                      <div class="column3">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <div class="descriptionAndSearch_d111ftta">
+                          <textarea
+                            class="search_s1kctt7n searchflexible"
+                            [(ngModel)]="review.description"
+                            disabled
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

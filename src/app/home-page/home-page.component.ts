@@ -34,7 +34,8 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  navigate(): void {
+  navigate(shopdetails: any): void {
+    this.homepageService.shopedetails = shopdetails;
     this.router.navigate(['food-detail']);
   }
 }

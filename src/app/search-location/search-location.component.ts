@@ -44,7 +44,6 @@ export class SearchLocationComponent implements OnInit {
   }
 
   public navigate(): void {
-    this.searchLocationService.locationname;
     this.router.navigate(['home-page']);
   }
 }

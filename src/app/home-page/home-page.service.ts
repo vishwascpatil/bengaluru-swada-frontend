@@ -8,7 +8,8 @@ import { tap, catchError, map } from 'rxjs/operators';
 })
 export class HomePageService {
   constructor(private http: HttpClient) {}
-
+  shopedetails: any;
+  shopName: string = '';
   public productsUrl =
     'https://bengaluruswada.herokuapp.com/api/BengaluruStreetFood/getareadetails/';
   GetLocationDetails(locationName: string): Observable<any> {
