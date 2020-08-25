@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="forms-container">
+    <div class="signin-signup">
+      <form action="" class="sign-in-form">
+        <!-- <h2 class="title">Sign in</h2> -->
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="famous food name" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-camera"></i>
+          <input type="tel" placeholder="Price" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <!-- <input type="text" placeholder="Select Category" /> -->
+          <select
+            name="selectedQuantity"
+            id="aantal"
+            class="dropdownUI"
+            place
+            [(ngModel)]="selectedCategory"
+          >
+            <option *ngFor="let option of options" [value]="option">{{
+              option
+            }}</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="ShopName" />
+        </div>
+        <input
+          id="geolocation"
+          type="submit"
+          value="{{ buttonlocation }}"
+          class="btn solid"
+          style="max-width: 380px; width: 100%;"
+          (click)="getLocation()"
+        />
+        <input
+          type="submit"
+          value="Post"
+          class="btn solid"
+          (click)="navigate()"
+        />
+      </form>
+    </div>
+  </div>
+
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>New here ?</h3>
+        <p>
+          Explore our mouth watering places in bangalore !
+        </p>
+        <button
+          class="btn transparent"
+          id="sign-up-btn"
+          (click)="navigatesignup()"
+        >
+          Sign up
+        </button>
+      </div>
+      <!-- <img src="images/log.svg" class="image" alt="" /> -->
+    </div>
+    <div class="panel right-panel">
+      <div class="content">
+        <h3>One of us ?</h3>
+        <p>
+          delicious food is awaiting for you inside
+        </p>
+        <button
+          class="btn transparent"
+          id="sign-in-btn"
+          (click)="navigatesignin()"
+        >
+          Sign in
+        </button>
+      </div>
+      <!-- <img src="img/register.svg" class="image" alt="" /> -->
+    </div>
+  </div>
+</div>

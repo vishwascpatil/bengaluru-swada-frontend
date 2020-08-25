@@ -12,6 +12,7 @@ import { FoodDetailComponent } from './food-detail/food-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { environment } from 'src/environments/environment';
+import { PostFoodItemComponent } from './post-food-item/post-food-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { environment } from 'src/environments/environment';
     SearchLocationComponent,
     HomePageComponent,
     FoodDetailComponent,
+    PostFoodItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { environment } from 'src/environments/environment';
       { path: 'search-location', component: SearchLocationComponent },
       { path: 'home-page', component: HomePageComponent },
       { path: 'food-detail', component: FoodDetailComponent },
+      { path: 'post-food-item', component: PostFoodItemComponent },
     ]),
   ],
   providers: [],

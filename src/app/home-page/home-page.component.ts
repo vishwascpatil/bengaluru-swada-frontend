@@ -38,4 +38,8 @@ export class HomePageComponent implements OnInit {
     this.homepageService.shopedetails = shopdetails;
     this.router.navigate(['food-detail']);
   }
+
+  navigatepostfooditem(): void {
+    this.router.navigate(['post-food-item']);
+  }
 }
