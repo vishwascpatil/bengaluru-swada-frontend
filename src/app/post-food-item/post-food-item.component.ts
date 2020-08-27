@@ -62,4 +62,15 @@ export class PostFoodItemComponent implements OnInit {
     let signincontainer = this.el.nativeElement.querySelector('.container');
     signincontainer.classList.remove('sign-up-mode');
   }
+  files: File[] = [];
+
+  onSelect(event) {
+    console.log(event);
+    this.files.push(...event.addedFiles);
+  }
+
+  onRemove(event) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
+  }
 }

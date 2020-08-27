@@ -666,3 +666,8 @@ form.sign-in-form {
     left: 50%;
   }
 }
+
+.dropzone {
+  width: 100%;
+  max-width: 380px;
+}

@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { environment } from 'src/environments/environment';
 import { PostFoodItemComponent } from './post-food-item/post-food-item.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { PostFoodItemComponent } from './post-food-item/post-food-item.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxDropzoneModule,
     FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
