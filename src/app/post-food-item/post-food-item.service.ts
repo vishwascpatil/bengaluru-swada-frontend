@@ -11,9 +11,9 @@ export class PostFoodItemService {
   shopedetails: any;
   shopName: string = '';
   public productsUrl =
-    'https://bengaluruswada.herokuapp.com/api/BengaluruStreetFood/getareadetails/';
-  GetLocationDetails(locationName: string): Observable<any> {
-    return this.http.get<any>(this.productsUrl + locationName).pipe(
+    'https://bengaluruswada.herokuapp.com/api/Food/getcategorydetails';
+  GetLocationDetails(): Observable<any> {
+    return this.http.get<any>(this.productsUrl).pipe(
       tap((data) => console.log('All : ' + JSON.stringify(data))),
       catchError(this.handleError)
     );
