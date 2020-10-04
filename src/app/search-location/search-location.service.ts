@@ -29,7 +29,7 @@ export class SearchLocationService {
   // }
   locationname: string = '';
   private productsUrl =
-    'https://bengaluruswada.herokuapp.com/api/BengaluruStreetFood/locations';
+    'https://bengaluruswada.herokuapp.com/api/Food/getlocations';
   GetLocations(): Observable<any> {
     return this.http.get<any>(this.productsUrl).pipe(
       tap((data) => console.log('All : ' + JSON.stringify(data))),
