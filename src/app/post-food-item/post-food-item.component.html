@@ -1,5 +1,3 @@
-<img [src]="cardImageBase64" />
-
 <div class="container">
   <div class="forms-container">
     <div class="signin-signup">
@@ -11,7 +9,7 @@
           <input
             type="text"
             placeholder="famous food name"
-            [(ngModel)]="famousFoodName"
+            [(ngModel)]="postfoodetails.FamousFood"
             [ngModelOptions]="{ standalone: true }"
           />
         </div>
@@ -20,7 +18,7 @@
           <input
             type="tel"
             placeholder="Price"
-            [(ngModel)]="price"
+            [(ngModel)]="postfoodetails.Price"
             [ngModelOptions]="{ standalone: true }"
           />
         </div>
@@ -28,14 +26,17 @@
           <i class="fas fa-user"></i>
           <!-- <input type="text" placeholder="Select Category" /> -->
           <select
+            #mySelect
             name="selectedQuantity"
             id="aantal"
             class="dropdownUI"
-            place
-            [(ngModel)]="selectedCategory"
+            (change)="bindcategoryid(mySelect.value)"
           >
-            <option *ngFor="let option of options" [value]="option">
-              {{ option }}
+            <option
+              *ngFor="let categorydetail of categorydetails"
+              [value]="categorydetail.categoryId"
+            >
+              {{ categorydetail.categoryName }}
             </option>
           </select>
         </div>
@@ -44,7 +45,7 @@
           <input
             type="text"
             placeholder="ShopName"
-            [(ngModel)]="shopName"
+            [(ngModel)]="postfoodetails.ShopName"
             [ngModelOptions]="{ standalone: true }"
           />
         </div>
@@ -53,7 +54,7 @@
           <input
             type="text"
             placeholder="Brief about the Food"
-            [(ngModel)]="description"
+            [(ngModel)]="postfoodetails.FoodDescription"
             [ngModelOptions]="{ standalone: true }"
           />
         </div>
@@ -62,14 +63,13 @@
           <input
             type="text"
             placeholder="AreaName"
-            [(ngModel)]="areaName"
+            [(ngModel)]="postfoodetails.LocationName"
             [ngModelOptions]="{ standalone: true }"
           />
         </div>
         <input
           id="geolocation"
           type="submit"
-          value="{{ buttonlocation }}"
           class="btn solid"
           style="max-width: 380px; width: 100%"
           (click)="getLocation()"
@@ -89,16 +89,7 @@
           type="submit"
           value="Post"
           class="btn solid"
-          (click)="
-            uploadPost(
-              famousFoodName,
-              price,
-              shopName,
-              description,
-              areaName,
-              selectedCategory
-            )
-          "
+          (click)="uploadfooddetails()"
         />
       </form>
     </div>

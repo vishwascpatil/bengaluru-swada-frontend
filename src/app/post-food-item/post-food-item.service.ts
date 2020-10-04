@@ -2,22 +2,31 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { tap, catchError, map } from 'rxjs/operators';
+import { PostFoodDetails } from './postFoodDetails';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostFoodItemService {
   constructor(private http: HttpClient) {}
-  shopedetails: any;
-  shopName: string = '';
-  public productsUrl =
+  public catergorylisturl =
     'https://bengaluruswada.herokuapp.com/api/Food/getcategorydetails';
-  GetLocationDetails(): Observable<any> {
-    return this.http.get<any>(this.productsUrl).pipe(
+  public savefooddetailsurl =
+    'https://bengaluruswada.herokuapp.com/api/Food/savefooddetails';
+
+  GetCategoryListDetails(): Observable<any> {
+    return this.http
+      .get<any>(this.catergorylisturl)
+      .pipe(catchError(this.handleError));
+  }
+
+  saveshopdetails(PostFoodDetails: PostFoodDetails): Observable<any> {
+    return this.http.post<any>(this.savefooddetailsurl, PostFoodDetails).pipe(
       tap((data) => console.log('All : ' + JSON.stringify(data))),
       catchError(this.handleError)
     );
   }
+
   private handleError(err: HttpErrorResponse) {
     let errorMesasge = '';
     if (err.error instanceof ErrorEvent) {
