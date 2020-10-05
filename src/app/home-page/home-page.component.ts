@@ -15,6 +15,7 @@ export class HomePageComponent implements OnInit {
     private homepageService: HomePageService
   ) {}
 
+  disableprofile: boolean = true;
   foodPosts: any = [];
   ngOnInit(): void {
     if (this.searchLocation.locationname.length > 0) {
