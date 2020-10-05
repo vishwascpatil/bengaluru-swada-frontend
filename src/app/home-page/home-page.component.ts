@@ -15,28 +15,17 @@ export class HomePageComponent implements OnInit {
     private homepageService: HomePageService
   ) {}
 
-  allshops: any = [];
+  foodPosts: any = [];
   ngOnInit(): void {
     if (this.searchLocation.locationname.length > 0) {
       this.homepageService
-        .GetLocationDetails(this.searchLocation.locationname)
-        .subscribe((areaDetails) => {
-          this.getallshopdetails(areaDetails);
+        .GetFoodPosts(this.searchLocation.locationname)
+        .subscribe((foodposts) => {
+          foodposts.forEach((foodpost) => {
+            this.foodPosts.push(foodpost);
+          });
         });
     }
-  }
-
-  getallshopdetails(areaDetails: any): any {
-    areaDetails.areas[0].categoryList.forEach((categoryist) => {
-      categoryist.shop.forEach((shops) => {
-        this.allshops.push(shops.shopDetails);
-      });
-    });
-  }
-
-  navigate(shopdetails: any): void {
-    this.homepageService.shopedetails = shopdetails;
-    this.router.navigate(['food-detail']);
   }
 
   navigatepostfooditem(): void {

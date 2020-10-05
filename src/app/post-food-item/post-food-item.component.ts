@@ -85,6 +85,7 @@ export class PostFoodItemComponent implements OnInit {
   public uploadfooddetails() {
     this.postfoodetails.Latitude = localStorage.getItem('latitude');
     this.postfoodetails.Longitude = localStorage.getItem('longitude');
+
     this.postfooditem
       .saveshopdetails(this.postfoodetails)
       .subscribe((stringvalue) => {

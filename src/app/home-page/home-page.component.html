@@ -16,31 +16,27 @@
         <div class="contentInner_czc1r2f">
           <div class="examples_e1ame48d">
             <div class="header_h10748mp">
-              <h1 class="title_tux72uk">
-                Explore
-              </h1>
+              <h1 class="title_tux72uk">Explore</h1>
               <div class="descriptionAndSearch_d111ftta">
                 <input class="search_s1kctt7n" placeholder="Search" />
               </div>
             </div>
-            <div *ngFor="let shopdetails of allshops">
-              <div class="categories_c3ricqe" (click)="navigate(shopdetails)">
+            <div *ngFor="let shopdetail of foodPosts">
+              <div class="categories_c3ricqe">
                 <div class="fullRow_f10r15cc">
                   <a class="featuredCard_fpot1f9">
                     <div
                       class="featuredImage_fd8tp8u"
-                      style="background: rgb(14, 152, 255);"
+                      style="background: rgb(14, 152, 255)"
                     >
-                      <img
-                        href="../Images/WhatsApp Image 2020-05-17 at 5.42.54 PM.jpeg"
-                      />
+                      <img [src]="shopdetail.imageUrls[0]" />
                     </div>
                     <div class="featuredStrings_fuyir49">
                       <!-- <div class="featuredSubtitle_f1f83cap">
                         Magic Motion
                       </div> -->
                       <div class="featuredTitle_f1n7hmrn">
-                        <h3 class="title">{{ shopdetails.shopName }}</h3>
+                        <h3 class="title">{{ shopdetail.shopName }}</h3>
                       </div>
                     </div></a
                   >
