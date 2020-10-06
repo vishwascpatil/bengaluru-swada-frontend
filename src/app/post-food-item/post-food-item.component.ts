@@ -86,24 +86,12 @@ export class PostFoodItemComponent implements OnInit {
     this.postfoodetails.Latitude = localStorage.getItem('latitude');
     this.postfoodetails.Longitude = localStorage.getItem('longitude');
 
+    this.router.navigate(['home-page']);
     this.postfooditem
       .saveshopdetails(this.postfoodetails)
       .subscribe((stringvalue) => {
         console.log(stringvalue);
       });
     localStorage.clear();
-  }
-
-  //navigation
-  navigate(): void {
-    this.router.navigate(['search-location']);
-  }
-  navigatesignup(): void {
-    let signupcontainer = this.el.nativeElement.querySelector('.container');
-    signupcontainer.classList.add('sign-up-mode');
-  }
-  navigatesignin(): void {
-    let signincontainer = this.el.nativeElement.querySelector('.container');
-    signincontainer.classList.remove('sign-up-mode');
   }
 }

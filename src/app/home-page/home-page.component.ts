@@ -18,15 +18,13 @@ export class HomePageComponent implements OnInit {
   disableprofile: boolean = true;
   foodPosts: any = [];
   ngOnInit(): void {
-    if (this.searchLocation.locationname.length > 0) {
-      this.homepageService
-        .GetFoodPosts(this.searchLocation.locationname)
-        .subscribe((foodposts) => {
-          foodposts.forEach((foodpost) => {
-            this.foodPosts.push(foodpost);
-          });
+    this.homepageService
+      .GetFoodPosts(this.searchLocation.locationname)
+      .subscribe((foodposts) => {
+        foodposts.forEach((foodpost) => {
+          this.foodPosts.push(foodpost);
         });
-    }
+      });
   }
 
   navigatepostfooditem(): void {
