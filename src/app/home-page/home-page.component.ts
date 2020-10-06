@@ -15,7 +15,9 @@ export class HomePageComponent implements OnInit {
     private homepageService: HomePageService
   ) {}
 
-  disableprofile: boolean = true;
+  enableProfile: boolean = false;
+  enableSearch: boolean = false;
+  enableHomeScreen: boolean = true;
   foodPosts: any = [];
   ngOnInit(): void {
     this.homepageService
@@ -29,5 +31,26 @@ export class HomePageComponent implements OnInit {
 
   navigatepostfooditem(): void {
     this.router.navigate(['post-food-item']);
+  }
+
+  search(): void {
+    this.enableHomeScreen = false;
+    this.enableProfile = false;
+    this.enableSearch = true;
+  }
+  home(): void {
+    this.enableSearch = false;
+    this.enableProfile = false;
+    this.enableHomeScreen = true;
+  }
+  enableprofile(): void {
+    this.enableSearch = false;
+    this.enableHomeScreen = false;
+    this.enableProfile = true;
+  }
+  enablesavefoodposts(): void {
+    this.enableSearch = false;
+    this.enableHomeScreen = false;
+    this.enableProfile = false;
   }
 }
