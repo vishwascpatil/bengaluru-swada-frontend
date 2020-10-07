@@ -14,7 +14,7 @@ export class HomePageService {
     'https://bengaluruswada.herokuapp.com/api/Food/getfoodposts?locationName=';
   GetFoodPosts(locationName: string): Observable<any> {
     return this.http.get<any>(this.productsUrl + locationName).pipe(
-      tap((data) => console.log('All : ' + JSON.stringify(data))),
+      tap((data) => console.log()),
       catchError(this.handleError)
     );
   }
