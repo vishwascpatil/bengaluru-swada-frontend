@@ -14,6 +14,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { environment } from 'src/environments/environment';
 import { PostFoodItemComponent } from './post-food-item/post-food-item.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
       { path: 'food-detail', component: FoodDetailComponent },
       { path: 'post-food-item', component: PostFoodItemComponent },
     ]),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

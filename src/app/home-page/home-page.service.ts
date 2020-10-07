@@ -18,6 +18,15 @@ export class HomePageService {
       catchError(this.handleError)
     );
   }
+
+  private locationUrl =
+    'https://bengaluruswada.herokuapp.com/api/Food/getlocations';
+  GetLocations(): Observable<any> {
+    return this.http.get<any>(this.locationUrl).pipe(
+      tap((data) => console.log('All : ' + JSON.stringify(data))),
+      catchError(this.handleError)
+    );
+  }
   private handleError(err: HttpErrorResponse) {
     let errorMesasge = '';
     if (err.error instanceof ErrorEvent) {

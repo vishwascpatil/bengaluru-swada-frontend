@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { SearchLocationService } from '../search-location/search-location.service';
 import { HomePageService } from './home-page.service';
 
@@ -19,21 +21,25 @@ export class HomePageComponent implements OnInit {
   enableSearch: boolean = false;
   enableHomeScreen: boolean = true;
   foodPosts: any = [];
+  locationslist: any = [];
   ngOnInit(): void {
-    this.homepageService
-      .GetFoodPosts(this.searchLocation.locationname)
-      .subscribe((foodposts) => {
-        foodposts.forEach((foodpost) => {
-          this.foodPosts.push(foodpost);
-        });
+    this.homepageService.GetFoodPosts('loadall').subscribe((foodposts) => {
+      foodposts.forEach((foodpost) => {
+        this.foodPosts.push(foodpost);
       });
+    });
+    this.homepageService.GetLocations().subscribe((foodposts) => {
+      foodposts.forEach((locationsList) => {
+        this.locationslist.push(locationsList);
+      });
+    });
   }
 
   navigatepostfooditem(): void {
     this.router.navigate(['post-food-item']);
   }
 
-  search(): void {
+  Search(): void {
     this.enableHomeScreen = false;
     this.enableProfile = false;
     this.enableSearch = true;
@@ -52,5 +58,26 @@ export class HomePageComponent implements OnInit {
     this.enableSearch = false;
     this.enableHomeScreen = false;
     this.enableProfile = false;
+  }
+  public model: any;
+  formatter = (result: string) => result.toUpperCase();
+
+  public search = (text$: Observable<string>) =>
+    text$.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      map((term) =>
+        term === ''
+          ? []
+          : this.locationslist
+              .filter((v) => v.toLowerCase().indexOf(term.toLowerCase()) > -1)
+              .slice(0, 10)
+      )
+    );
+  changelocation(model: any) {
+    this.homepageService.GetFoodPosts(model).subscribe((foodposts) => {
+      this.foodPosts = foodposts;
+      this.home();
+    });
   }
 }

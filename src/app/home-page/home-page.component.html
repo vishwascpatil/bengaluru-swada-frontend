@@ -20,7 +20,7 @@
           </svg>
         </div>
       </li>
-      <li class="nav__item" (click)="search()">
+      <li class="nav__item" (click)="Search()">
         <div
           class="nav__link focus--box-shadow"
           role="menuitem"
@@ -113,6 +113,11 @@
             class="search__input focus--box-shadow"
             type="text"
             placeholder="Search location"
+            [(ngModel)]="model"
+            [ngbTypeahead]="search"
+            [resultFormatter]="formatter"
+            (change)="changelocation(model)"
+            [ngModelOptions]="{ standalone: true }"
           />
         </form>
       </div>

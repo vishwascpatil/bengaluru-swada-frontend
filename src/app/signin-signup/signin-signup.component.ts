@@ -23,7 +23,7 @@ export class SigninSignupComponent implements OnInit {
   // });
   // displaylogin: Boolean = true;
   navigate(): void {
-    this.router.navigate(['search-location']);
+    this.router.navigate(['home-page']);
   }
   navigatesignin(): void {
     let signincontainer = this.el.nativeElement.querySelector('.container');
