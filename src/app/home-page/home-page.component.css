@@ -438,7 +438,7 @@ button {
   border: 0;
   font-weight: var(--alabaster);
   color: var(--dune);
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
