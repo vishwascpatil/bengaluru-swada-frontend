@@ -589,7 +589,7 @@ form.sign-in-form {
 
   .btn.transparent {
     width: 110px;
-    height: 35px;
+    height: auto;
     font-size: 0.7rem;
   }
 
