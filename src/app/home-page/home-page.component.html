@@ -116,7 +116,7 @@
             [(ngModel)]="model"
             [ngbTypeahead]="search"
             [resultFormatter]="formatter"
-            (change)="changelocation(model)"
+            (mouseout)="changelocation(model)"
             [ngModelOptions]="{ standalone: true }"
           />
         </form>
@@ -210,10 +210,10 @@
       </ul>
     </section>
   </main>
-  <aside class="aside" *ngIf="enableProfile">
+  <aside class="aside" *ngIf="enableProfile" style="background-color: white">
     <section class="section">
       <div class="aside__control"></div>
-      <div class="profile-main" style="background-color: whitesmoke">
+      <div class="profile-main">
         <button class="profile-main__setting focus--box-shadow" type="button">
           <img
             class="profile-main__photo"

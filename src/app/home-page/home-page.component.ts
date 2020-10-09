@@ -75,9 +75,14 @@ export class HomePageComponent implements OnInit {
       )
     );
   changelocation(model: any) {
-    this.homepageService.GetFoodPosts(model).subscribe((foodposts) => {
-      this.foodPosts = foodposts;
-      this.home();
+    this.locationslist.forEach((element) => {
+      if (element == model) {
+        this.homepageService.GetFoodPosts(model).subscribe((foodposts) => {
+          this.foodPosts = foodposts;
+          this.home();
+        });
+        return;
+      }
     });
   }
 }
