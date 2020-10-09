@@ -98,7 +98,12 @@
     <header class="header" *ngIf="enableSearch">
       <div class="header__wrapper">
         <form action="" class="search">
-          <button class="search__button focus--box-shadow" type="submit">
+          <button
+            class="search__button focus--box-shadow"
+            style="background-color: var(--true-v)"
+            type="submit"
+            (click)="changelocation(model)"
+          >
             <svg
               class="search__icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +121,6 @@
             [(ngModel)]="model"
             [ngbTypeahead]="search"
             [resultFormatter]="formatter"
-            (mouseout)="changelocation(model)"
             [ngModelOptions]="{ standalone: true }"
           />
         </form>

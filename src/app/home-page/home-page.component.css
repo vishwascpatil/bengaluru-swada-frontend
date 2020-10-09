@@ -676,7 +676,9 @@ button {
 }
 
 /* Header */
-
+.purple {
+  background-color: var(--true-v);
+}
 .header {
   padding: 3.05rem 0 5rem;
 }
@@ -715,7 +717,9 @@ button {
     fill: var(--alabaster);
   }
 }
-
+.search__icon path {
+  fill: var(--alabaster);
+}
 .search__icon {
   width: 1.5rem;
   height: 1.5rem;
