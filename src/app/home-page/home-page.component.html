@@ -212,67 +212,36 @@
   </main>
   <aside class="aside" *ngIf="enableProfile">
     <section class="section">
-      <div class="aside__control">
-        <button
-          class="aside__button focus--box-shadow"
-          type="button"
-          aria-label="Close profile settings"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            role="presentation"
-          >
-            <path
-              d="M17,11H9.41l3.3-3.29a1,1,0,1,0-1.42-1.42l-5,5a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l5,5a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L9.41,13H17a1,1,0,0,0,0-2Z"
-            />
-          </svg>
-        </button>
-        <button
-          class="aside__button aside__button--notification focus--box-shadow"
-          type="button"
-          aria-label="You have new feedback"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            role="presentation"
-          >
-            <path
-              d="M18,13.18V10a6,6,0,0,0-5-5.91V3a1,1,0,0,0-2,0V4.09A6,6,0,0,0,6,10v3.18A3,3,0,0,0,4,16v2a1,1,0,0,0,1,1H8.14a4,4,0,0,0,7.72,0H19a1,1,0,0,0,1-1V16A3,3,0,0,0,18,13.18ZM8,10a4,4,0,0,1,8,0v3H8Zm4,10a2,2,0,0,1-1.72-1h3.44A2,2,0,0,1,12,20Zm6-3H6V16a1,1,0,0,1,1-1H17a1,1,0,0,1,1,1Z"
-            />
-          </svg>
-        </button>
-      </div>
-      <div class="profile-main">
+      <div class="aside__control"></div>
+      <div class="profile-main" style="background-color: whitesmoke">
         <button class="profile-main__setting focus--box-shadow" type="button">
           <img
             class="profile-main__photo"
-            src="./img/seth-doyle-uJ8LNVCBjFQ-unsplash.jpg"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAflBMVEX///8AAAAHBwf8/Pzv7+/5+fnn5+cLCwv29vYXFxeJiYmAgIBLS0tPT0/z8/M4ODh4eHgyMjK4uLg/Pz/Jycmnp6dubm6IiIjg4OBjY2MoKCipqalXV1ednZ3Q0NBNTU0iIiLBwcFERERycnIrKyuRkZFfX1/Y2NgbGxuysrLuhX5hAAAEg0lEQVR4nO3di3aqOhAGYMNNBUUEVFCwWrWV93/BszmuvVrllkxNZuye7wnmX0ASkhBGI8YYY4wxxhhjjDHGGGOMvTQnXflBFAX+KnWwawELV/lWfLPNdxPsmgCOxVg0jIsjdl2K4kUzxc0ixq5NQTbrilGbZ9j1ySpbbqq7G2yFXaEU96M/Ri13sascFr4P5xBiRr79Cjuf8nsJ8SR272P+3dzGrrXXWjaHEBF2rX0q+RxCEO5QnKlKkCvd0ZfCjVU7Ydfb5VMth7A+sSvuUCgGER/YFbfLLNUgloddc6tINYcQAXbNra7qQQ7YNbdJ1XMIsceuugXgzqJ5b0mOFu8l2FU3ucptVm1Mb+gIekQoPiQrWJAddt0NASzIBrvuhhwWJMeuu+ENFqTArrtBas6haYZddwOoG6HYkSxhQRbYdTcArwi9IMBn5B277oY5LAi9VgvYj6yx627YwILQ69l/zVjr14x+Ye8jFsGFElBHQq8bUZ4vvaE4axpDglCckXcHlkDbjEmuWwH6dnr9ek1pleemwq65la20zFObEmx8a8pzjRTnGWueYp9IdFVhpNyV0Bv5/uUptcBjshdEcSxPbwT/xT3L5zgTbbJuUunn3Uqxa+3n/4Yb63+Su2resOscFErN1C1D7DqHedvhHFvCLe8Xb/CanF8ix2jkJP05Errbgh7YvcPHE70F0G7xoSvGleLbbY9J0No1WtELNFcPvKDxojWNXuQpf+BW+bcs04+K9OhqgBdfgtM6ulQvsyGeMcYYY4yxf5WbpVXpR+u8KOZvf8yLIl9Hflml2au8lGTVJk96P1y4JrlP+/Vkcgxm0uuI01lwJHlxssu7+hc97xdiV8bzgXszhVj6dCYkYuDm5b/mJKa67JXCKlWX8wp99nEnMfcuY4u7CWI/MF2tIsH7vNJtnxaFsgKk+ysDt1RdFiiNcQzYnzVkjNB+lc+P8YdVms4B3K887GI2x0VXDsNJgNuu5RjcnC2/UQNibGx3dti5QPgcW1PLcxJn6vyMoW/6QDuV1Rg5hct+wmh3yNJEED094QMDB1fZmp/0m63+IDsTOUzs0QZ+pqdK+6evmZkcQuiektA4yLqne8j1xHfbfpo/GZ1oHWV9N9Y7DXk0lUN37y69rffn9D4kyidPwek9s+rpEyfd9H6iqGHmpMtUZ46JuRxC6Jyuc0wG0fmNomcyiM4XXqNBdO7XNjZkrOkcNhoNonNGW/VISbJB9iaD6Fz42VsG6QxiA48DA7B8vetXR8CxkhAH7V/3OdonTGtrE9O/lfJ366oOhn5c4ADPCZJkReZOgkg1vpfMjK6326Wm++tsfF03DDS8ZB1KjD0DTvTkKIcSayeas3niDbZE3SHklsBD9B5YBH4Vk+Y/vsO2Gxq76Ca7+Q9mUqdrSmcNhKu2fwtJXIvTEX3v3CM7DRKlCzMtSmJ7TL9MUr+QWWO0FuuS6v8IvoRpGRWL9obZuiYfm90nudupj5ul8a68bILoFEXB5lLu4r33UgkYY4wxxhhjjDHGGGOMMXbnPyYJRRijA1/TAAAAAElFTkSuQmCC"
             alt="Profile photo"
           />
         </button>
-        <h1 class="profile-main__name">Jessica</h1>
+        <h1 class="profile-main__name">Vishwas C Patil</h1>
       </div>
       <ul class="statistics">
         <li class="statistics__entry">
-          <a class="statistics__entry-description" href="#">Teams</a
-          ><span class="statistics__entry-quantity">5</span>
+          <div class="statistics__entry-description">UserName</div>
+          <!-- <span class="statistics__entry-quantity">5</span> -->
         </li>
         <li class="statistics__entry">
-          <a class="statistics__entry-description" href="#">Projects</a
-          ><span class="statistics__entry-quantity">3</span>
+          <div class="statistics__entry-description">Email Address</div>
+          <!-- <span class="statistics__entry-quantity">3</span> -->
         </li>
         <li class="statistics__entry">
-          <a class="statistics__entry-description" href="#">Feedback</a
-          ><span class="statistics__entry-quantity">48</span>
+          <div class="statistics__entry-description">Password</div>
+          <!-- <span class="statistics__entry-quantity">48</span> -->
         </li>
       </ul>
-      <div class="banner">
+      <!-- <div class="banner">
         <h3 class="banner__title">Premium access</h3>
         <p class="banner__description">Create teams without limits</p>
         <button class="banner__button" type="button">Get Premium Access</button>
-      </div>
+      </div> -->
     </section>
   </aside>
 </div>
