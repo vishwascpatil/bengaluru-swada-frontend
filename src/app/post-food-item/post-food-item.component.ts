@@ -86,6 +86,9 @@ export class PostFoodItemComponent implements OnInit {
     this.postfoodetails.Latitude = localStorage.getItem('latitude');
     this.postfoodetails.Longitude = localStorage.getItem('longitude');
 
+    if(this.postfoodetails.Latitude && this.postfoodetails.Longitude)
+    {
+      if(this.postfoodetails.ImageUrls[0]){
     this.router.navigate(['home-page']);
     this.postfooditem
       .saveshopdetails(this.postfoodetails)
@@ -94,4 +97,13 @@ export class PostFoodItemComponent implements OnInit {
       });
     localStorage.clear();
   }
+  else
+  alert("Please upload food pictures");
+    }
+    else
+        alert("Please Click on Get Location for accurate position of the shop");
+
+  }
+
+
 }
