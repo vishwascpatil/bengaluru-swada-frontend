@@ -178,34 +178,11 @@
               </div>
               <div class="project__element project__photo">
                 <ul class="photo">
-                  <!-- <img
+                  <img
                     [src]="shopdetail.imageUrls[0]"
                     style="border-radius: 10px"
-                  /> -->
-                  <ngx-hm-carousel
-                  [(ngModel)]="index"
-                  [autoplay]="autoplay"
-                  [infinite]="infinite"
-                  [data]="avatars"
-                  [aniTime]="200"
-                  class="carousel">
+                  />
 
-                  <section ngx-hm-carousel-container class="content">
-                    <article class="item cursor-pointer visible_important"
-                      ngx-hm-carousel-item
-                      *ngFor="let avatar of  shopdetail.imageUrls">
-                        <img [src]="avatar">
-                    </article>
-                  </section>
-
-
-
-                  <ng-template #carouselDot let-model>
-                    <div class="ball bg-accent"
-                      [class.visible]="model.index === model.currentIndex"></div>
-                  </ng-template>
-
-                </ngx-hm-carousel>
                 </ul>
               </div>
               <div class="project__element project__setting">
