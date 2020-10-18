@@ -15,6 +15,8 @@ import { environment } from 'src/environments/environment';
 import { PostFoodItemComponent } from './post-food-item/post-food-item.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { NgxHmCarouselModule } from 'ngx-hm-carousel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
+
+    NgxHmCarouselModule,
     RouterModule.forRoot([
       { path: 'signin-signup', component: SigninSignupComponent },
       { path: 'search-location', component: SearchLocationComponent },

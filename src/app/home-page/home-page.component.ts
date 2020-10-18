@@ -5,6 +5,8 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { SearchLocationService } from '../search-location/search-location.service';
 import { HomePageService } from './home-page.service';
 
+import { NgxHmCarouselModule } from 'ngx-hm-carousel';
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -85,4 +87,17 @@ export class HomePageComponent implements OnInit {
       }
     });
   }
+  index = 0;
+  infinite = true;
+  autoplay = false;
+  avatars = '12345'.split('').map((x, i) => {
+    const num = i;
+    // const num = Math.floor(Math.random() * 1000);
+    return {
+      url: `https://picsum.photos/600/400/?${num}`,
+      title: `${num}`
+    };
+  });
+
+
 }
