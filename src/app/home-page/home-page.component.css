@@ -671,7 +671,7 @@ button {
   .main {
     width: 100%;
     order: 2;
-    margin: 0 1rem 6rem 1rem;
+    margin: 0 0.5rem 6rem 0.5rem;
   }
 }
 
@@ -1196,7 +1196,7 @@ button {
 
   .project__photo {
     order: 4;
-    width: 33.333%;
+    width: 100%;
   }
 
   .project__date {
