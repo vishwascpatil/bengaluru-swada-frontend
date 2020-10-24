@@ -1044,7 +1044,7 @@ button {
 .photo {
   display: flex;
   align-items: center;
-  margin-left: -3px;
+  margin-left: 0px;
 }
 
 .photo__item {
