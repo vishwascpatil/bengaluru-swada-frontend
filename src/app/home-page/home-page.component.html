@@ -126,7 +126,11 @@
         </form>
       </div>
     </header>
-    <section class="section" *ngIf="enableHomeScreen">
+
+    <div  *ngIf="!disableloader" style="padding: 40%;">
+      <div class="loader"></div>
+    </div>
+    <section class="section" *ngIf="enableHomeScreen && disableloader" >
       <header class="section__header" style="padding-top: 5%">
         <h2 class="section__title">Explore Food</h2>
         <!-- <div class="section__control">
@@ -146,11 +150,13 @@
             </svg>
           </button>
         </div> -->
+
       </header>
       <ul
         class="project"
         *ngFor="let shopdetail of foodPosts"
         style="padding-top: 5%"
+
       >
         <li class="project__item">
           <!-- <a href="" class="project__link focus--box-shadow"> -->

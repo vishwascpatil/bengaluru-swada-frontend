@@ -24,9 +24,11 @@ export class HomePageComponent implements OnInit {
   enableHomeScreen: boolean = true;
   foodPosts: any = [];
   locationslist: any = [];
+  disableloader: boolean =  false;
   ngOnInit(): void {
     this.homepageService.GetFoodPosts('loadall').subscribe((foodposts) => {
       foodposts.forEach((foodpost) => {
+        this.disableloader = true;
         this.foodPosts.push(foodpost);
       });
     });
