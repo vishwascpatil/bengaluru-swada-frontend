@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { delay } from 'rxjs/operators';
 import { PostFoodItemService } from './post-food-item.service';
 import { PostFoodDetails } from './postFoodDetails';
 
@@ -29,6 +30,8 @@ export class PostFoodItemComponent implements OnInit {
   ];
   files: File[] = [];
 
+  disableloader: boolean =  true;
+  successflag: boolean = false;
   //initialization
   ngOnInit(): void {
     this.postfooditem
@@ -121,20 +124,28 @@ export class PostFoodItemComponent implements OnInit {
     }
     return true;
   }
-  public uploadfooddetails() {
+  public async uploadfooddetails() {
     this.postfoodetails.Latitude = localStorage.getItem('latitude');
     this.postfoodetails.Longitude = localStorage.getItem('longitude');
+
+    this.disableloader = false;
+
     if(this.validateFoodProductDetails())
     {
-    this.router.navigate(['home-page']);
-    this.postfooditem
-      .saveshopdetails(this.postfoodetails)
-      .subscribe((stringvalue) => {
-        console.log(stringvalue);
-      });
+      this.disableloader = false;
+    if(await this.postfooditem
+      .saveshopdetails(this.postfoodetails))
+      {
+        this.successflag = true;
+        setTimeout(()=>{
+          this.router.navigate(['home-page']) }, 2000)
+
+      }
     localStorage.clear();
     }
   }
+
+
 }
 
 

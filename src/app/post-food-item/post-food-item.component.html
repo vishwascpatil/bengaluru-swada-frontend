@@ -1,7 +1,22 @@
+
+
 <div class="container">
+
   <div class="forms-container">
+    <div class="success-checkmark" style="margin: 40%;" *ngIf="successflag">
+      <div class="check-icon">
+        <span class="icon-line line-tip"></span>
+        <span class="icon-line line-long"></span>
+        <div class="icon-circle"></div>
+        <div class="icon-fix"></div>
+      </div>
+    </div>
+  <div class="loader" style="margin: 40%;" *ngIf="!disableloader && !successflag">
+
+  </div>
     <div class="signin-signup">
-      <form action="" class="sign-in-form">
+      <form action="" class="sign-in-form" *ngIf="disableloader">
+
         <!-- <h2 class="title">Sign in</h2> -->
 
         <div class="input-field">
@@ -95,4 +110,6 @@
       </form>
     </div>
   </div>
+
+
 </div>

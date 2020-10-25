@@ -9,6 +9,8 @@ import { PostFoodDetails } from './postFoodDetails';
 })
 export class PostFoodItemService {
   constructor(private http: HttpClient) {}
+
+  detailsdaved: boolean = false;
   public catergorylisturl =
     'https://bengaluruswada.herokuapp.com/api/Food/getcategorydetails';
   public savefooddetailsurl =
@@ -20,11 +22,15 @@ export class PostFoodItemService {
       .pipe(catchError(this.handleError));
   }
 
-  saveshopdetails(PostFoodDetails: PostFoodDetails): Observable<any> {
-    return this.http.post<any>(this.savefooddetailsurl, PostFoodDetails).pipe(
-      tap((data) => console.log('All : ' + JSON.stringify(data))),
-      catchError(this.handleError)
-    );
+  async saveshopdetails(PostFoodDetails: PostFoodDetails): Promise<any> {
+    // this.http.post<any>(this.savefooddetailsurl, PostFoodDetails);
+    return await this.http.post(this.savefooddetailsurl, PostFoodDetails)
+                 .toPromise().then((data)=>{
+                   console.log(data);
+                 }).catch((error)=>{
+                   if(error.status == 200)
+                        return this.detailsdaved = true;
+                 });
   }
 
   private handleError(err: HttpErrorResponse) {
