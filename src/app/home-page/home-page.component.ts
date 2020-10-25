@@ -81,7 +81,9 @@ export class HomePageComponent implements OnInit {
   changelocation(model: any) {
     this.locationslist.forEach((element) => {
       if (element == model) {
+        this.disableloader = false;
         this.homepageService.GetFoodPosts(model).subscribe((foodposts) => {
+          this.disableloader = true;
           this.foodPosts = foodposts;
           this.home();
         });
@@ -89,17 +91,6 @@ export class HomePageComponent implements OnInit {
       }
     });
   }
-  index = 0;
-  infinite = true;
-  autoplay = false;
-  avatars = '12345'.split('').map((x, i) => {
-    const num = i;
-    // const num = Math.floor(Math.random() * 1000);
-    return {
-      url: `https://picsum.photos/600/400/?${num}`,
-      title: `${num}`
-    };
-  });
 
 
 }
