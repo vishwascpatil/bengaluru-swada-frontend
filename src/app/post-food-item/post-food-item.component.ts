@@ -128,8 +128,6 @@ export class PostFoodItemComponent implements OnInit {
     this.postfoodetails.Latitude = localStorage.getItem('latitude');
     this.postfoodetails.Longitude = localStorage.getItem('longitude');
 
-    this.disableloader = false;
-
     if(this.validateFoodProductDetails())
     {
       this.disableloader = false;
@@ -138,7 +136,7 @@ export class PostFoodItemComponent implements OnInit {
       {
         this.successflag = true;
         setTimeout(()=>{
-          this.router.navigate(['home-page']) }, 2000)
+          this.router.navigate(['home-page']) }, 2500)
 
       }
     localStorage.clear();
