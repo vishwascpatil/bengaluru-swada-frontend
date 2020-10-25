@@ -82,13 +82,50 @@ export class PostFoodItemComponent implements OnInit {
     });
   };
 
+  public validateFoodProductDetails():boolean
+  {
+    if(!this.postfoodetails.Latitude && !this.postfoodetails.Longitude)
+    {
+        alert("Please Click on Get Location for accurate position of the shop");
+        return false;
+    }
+
+    if(!this.postfoodetails.ImageUrls[0])
+    {
+        alert("please upload food pictures");
+        return false;
+    }
+    if(!this.postfoodetails.FamousFood){
+      alert("please Enter Famous Food Name");
+      return false;
+    }
+    if(!this.postfoodetails.Price){
+      alert("please Enter Food Price");
+      return false;
+    }
+    if(!this.postfoodetails.CategoryId){
+      alert("please Select the Food Category");
+      return false;
+    }
+    if(!this.postfoodetails.ShopName){
+      alert("please Enter the Shop Name");
+      return false;
+    }
+    if(!this.postfoodetails.FoodDescription){
+      alert("please Enter the Food Description");
+      return false;
+    }
+    if(!this.postfoodetails.LocationName){
+      alert("please Enter the Location Name");
+      return false;
+    }
+    return true;
+  }
   public uploadfooddetails() {
     this.postfoodetails.Latitude = localStorage.getItem('latitude');
     this.postfoodetails.Longitude = localStorage.getItem('longitude');
-
-    if(this.postfoodetails.Latitude && this.postfoodetails.Longitude)
+    if(this.validateFoodProductDetails())
     {
-      if(this.postfoodetails.ImageUrls[0]){
     this.router.navigate(['home-page']);
     this.postfooditem
       .saveshopdetails(this.postfoodetails)
@@ -96,14 +133,8 @@ export class PostFoodItemComponent implements OnInit {
         console.log(stringvalue);
       });
     localStorage.clear();
-  }
-  else
-  alert("Please upload food pictures");
     }
-    else
-        alert("Please Click on Get Location for accurate position of the shop");
-
   }
-
-
 }
+
+
